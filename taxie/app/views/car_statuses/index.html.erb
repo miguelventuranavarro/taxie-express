@@ -1,0 +1,27 @@
+<h1>Listing car_statuses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @car_statuses.each do |car_status| %>
+      <tr>
+        <td><%= car_status.name %></td>
+        <td><%= link_to 'Show', car_status %></td>
+        <td><%= link_to 'Edit', edit_car_status_path(car_status) %></td>
+        <td><%= link_to 'Destroy', car_status, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Car status', new_car_status_path %>

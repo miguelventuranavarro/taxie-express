@@ -1,0 +1,81 @@
+
+<% provide(:rate,"active") %>
+<% provide(:title,"Tarifas") %>
+
+<div class="container">
+    <div class="row">
+
+      <div class="col-md-12">
+        <h1><font color="blue">Tarifas</h1>  
+        <p> <font color="#000000" > BIENVENIDO!!...
+        Aqui podras presupuestar nuestro servicio de Taxi: <P>
+      </div>
+    </div>
+  </div>
+
+
+<div class="jumbotron">
+       
+        <style>
+          body {
+          background-color: gold;
+               }
+        </style>
+        </body>
+
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+
+			  <%= form_for :rate, url: {action: "show"}, html: {method: "get"} do |f| %>
+			  <div class="form-group">
+			  <%= f.label "Distrito y zona de recojo:" %>
+			  <%= f.select :district_o, options_for_select(@districts.collect { |district| [district.name.titleize, district.id] }, 1), {}, { id: 'districts_select', class:'form-control' } %>
+			  </div>
+			  <div class="form-group">			  
+			  <%= f.select :zone_o, options_for_select(@zones.collect { |zone| [zone.name.titleize, zone.id] }, 0), {}, { id: 'zones_select', class:'form-control' } %>
+			  </div>
+			  <hr>
+
+
+
+
+			  <div class="form-group">
+			  <%= f.label "Distrito destino:" %>	
+			  <%= f.select :district_d, options_for_select(@districts.collect { |district| [district.name.titleize, district.id] }, 1), {}, { id: 'districts_select_2', class:'form-control' } %>
+			  </div>
+			  <div class="form-group">				
+			  <%= f.select :zone_d, options_for_select(@zones.collect { |zone| [zone.name.titleize, zone.id] }, 0), {}, { id: 'zones_select_2', class:'form-control' } %>
+			  </div>
+			  <hr>
+			  <div class="form-group">
+			  <%= f.label "Tipo de vehículo:" %>	
+			  <%= f.select :car_type_id, options_for_select(@car_types.collect { |car_type| [car_type.name.titleize, car_type.id] }, 1), {}, { id: 'car_types', class:'form-control' } %>
+			  </div>
+			  <hr>
+
+			
+			<%= f.submit "Ver tarifa",{class:'btn btn-default	btn-lg'} %>
+			<% end %>
+
+		</div>
+
+		</div>
+	</div>
+
+
+</div> <!-- /container jumbotron-->
+
+
+  <hr>
+      <footer>
+        <p>&copy; [J&M]2 Company- 2015</p>
+      </footer>
+</div> <!-- /container -->
+
+
+
+
+

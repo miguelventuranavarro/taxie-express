@@ -1,0 +1,27 @@
+<h1>Listing reservation_statuses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reservation_statuses.each do |reservation_status| %>
+      <tr>
+        <td><%= reservation_status.name %></td>
+        <td><%= link_to 'Show', reservation_status %></td>
+        <td><%= link_to 'Edit', edit_reservation_status_path(reservation_status) %></td>
+        <td><%= link_to 'Destroy', reservation_status, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Reservation status', new_reservation_status_path %>

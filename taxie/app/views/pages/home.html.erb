@@ -1,0 +1,106 @@
+    <% provide(:home,"active") %>
+    <% provide(:title,"Bienvenido") %>
+
+
+     <!-- Backgroun con imagen
+      <style>
+        body {
+        background-image: url("bgtaxie.jpg");
+        background-color: white;
+             }
+      </style>
+      </body>
+      -->
+
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+
+     
+        <style>
+          body {
+          background-color: gold;
+               }
+        </style>
+        </body>
+     
+    
+      <div class="container">
+        <img src="/images/bgtaxie.jpg" align="center" width="1224" height="300" >
+       
+       <%  if not user_signed_in? %>
+
+          <h2  align="center"> Bienvenido!  </h2>   
+
+      <% end %>        
+      
+
+      <%  if user_signed_in? %>
+
+          <h2  align="center"> Bienvenido!   <%= current_user.name%> </h2>  
+
+      <% end %>
+
+          <p> 
+          <style>
+            p.ex1 {
+                color: blue;
+                font: 16px arial, sans-serif;
+                text-align: center;
+              }
+          </style>
+            <p class="ex1"> ¿Buscas una compañia de Taxis confiable, que te brinde seguridad y un servicio de calidad?<br>
+               <strong>Taxi Express </strong> es la compañia de Taxis con amplia experiencia brindando a nuestros clientes tranquilidad y confort en lo que a servicios de taxi se refiere.</p>
+
+
+      <div class="row">
+        <div class="col-md-6" align="center">
+              <h2> </h2>
+              <p align="center" > <a class="btn btn-primary btn-lg" href="#" role="button">Pide  Tu Taxi Ahora Mismo  &raquo; </a></p>
+        </div>
+        
+        <div class="col-md-6" align="center">
+              <h2> </h2>
+              <p align="center" >   <a class="btn btn-primary btn-lg" href="#" role="button">Haz una Reserva Programada  &raquo;</a></p>
+        </div>
+      </div>
+
+
+        </div>
+    </div>
+      
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-3" >
+          <h2> Acerca de Nosotros</h2>
+          <p>Somos tu mejor alternativa. </p>
+          <p><%= link_to "Ir a Nosotros", about_path, :class => 'btn btn-default'  %></p>
+          
+        </div>
+        <div class="col-md-3">
+          <h2>Conoce tu tarifa</h2>
+          <p>Introduce tu ruta para obtener el costo. <br> <br>  </p>
+          <p><%= link_to "Ir a tarifa", rate_path, :class => 'btn btn-default'  %></p>
+
+        </div>
+
+        <div class="col-md-3">
+          <h2>¿Eres Cliente Frecuente?</h2>
+          <p>No pierdas tiempo y reserva ya!!. <br>   </p>
+          <p><a class="btn btn-default" href="#" role="button">Ver Mas &raquo;</a></p>
+       </div>
+        <div class="col-md-3">
+          <h2>Tu buen conductor</h2>
+          <p>Califica a tu conductor para mejorar nuestro servicio.<br>  </p>
+          <p><a class="btn btn-default" href="#" role="button">Ver Mas &raquo;</a></p>
+
+        </div>
+      </div>
+
+      <hr>
+
+    <footer>
+        <p>&copy; [J&M]2 Company - 2015</p>
+      </footer>
+    </div> <!-- /container -->

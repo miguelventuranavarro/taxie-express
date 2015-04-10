@@ -1,0 +1,20 @@
+<% provide(:reserve,"active") %>
+<% provide(:title,"Reserva") %>
+
+<div class="container">
+	<div class="row">
+		
+			<h1>Reserva</h1>	
+			<%= @error_zone_o %>
+			<!--<%= debug @reservation %>-->
+
+		    <div class="alert alert-success">
+		        
+		        Tu reserva ha sido realizada satisfactoriamente.
+		        <p>
+		        	Tu código de reserva es: <strong><%= @reservation.code %></strong>
+
+		        </p>
+		    </div>			
+	</div>
+</div>

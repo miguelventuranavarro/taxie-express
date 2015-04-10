@@ -1,0 +1,111 @@
+id_zona,N_Zona,Id_District
+1,Ancón,1
+2,Santa Rosa,2
+3,Ventanilla,3
+4,Bellavista,4
+5,San José,4
+6,Cercado,4
+7,Industrial I,4
+8,Insdustrial II,4
+9,La Punta,5
+10,Carmen de La Legua-Reynoso,6
+11,Bellavista,7
+12,La Perla,8
+13,Carabayllo,9
+14,Puente Piedra,10
+15,Ingeniería,11
+16,Sn. Germán/Conde,11
+17,Pacífico,11
+18,San Diego,11
+19,El Trebol,12
+20,Palmeras,12
+21,Villa Sol,12
+22,Pro/Pro Lima,12
+23,Carmen/Retablo,13
+24,San Felipe,13
+25,Collique,13
+26,Carabayllo,13
+27,Ermitaño/Tahua,14
+28,Megaplaza,14
+29,Zárate,15
+30,Mangomarca,15
+31,Las Flores,15
+32,Canto Grande,15
+33,Bayovar/Cáceres,15
+34,Sta. Beatriz,16
+35,Cercado,16
+36,Barrios Altos,16
+37,Industrial,16
+38,Palomino,16
+39,Breña,17
+40,Rímac,18
+41,El Agustino,19
+42,Pando,20
+43,Leyendas,20
+44,Maranga,20
+45,Bolivar,21
+46,Aelu,21
+47,San Felipe,22
+48,San José,22
+49,Pershing,23
+50,Castilla,23
+51,Lince,24
+52,La Victoria,25
+53,Sta. Catalina,25
+54,San Luis,26
+55,Orrantia,27
+56,Basadre,27
+57,Golf Club,27
+58,Arona,27
+59,Corpac,27
+60,Pucllana,28
+61,Santa Cruz,28
+62,Reducto,28
+63,Aurora,28
+64,Aramburú,29
+65,La Calera,29
+66,Barranco,30
+67,Guardia Civil,31
+68,S. Borja Norte,31
+69,Pentagonito,31
+70,Higuereta,32
+71,Chacarilla,32
+72,Chama,32
+73,San Roque,32
+74,Castellana,32
+75,Palmas,32
+76,Sagitario,32
+77,Golf Incas,32
+78,Álamos,32
+79,Valle Hermoso,32
+80,Casuarin/Casuar.Sur,32
+81,Chorrillos,33
+82,Los Cedros,33
+83,Campiña,33
+84,Encant/Delicia,33
+85,Óvalo,34
+86,Mdo. Product.,34
+87,Salamanca,35
+88,Vulcano,35
+89,Mayorazgo,35
+90,Camacho,36
+91,Sta. Patricia,36
+92,El Remanso,36
+93,La Capilla,36
+94,Rinconada,36
+95,Plani/Sol Molina,36
+96,Lurigancho-Chosica,37
+97,Chaclacayo,38
+98,Cieneguilla,39
+99,Pachacámac,40
+100,San Juan de Miraflores,41
+101,Sn. Gabriel/Pesquero,42
+102,José Gálvez/Tablada,42
+103,"Sector 1,2 y 3",43
+104,Sector 5 y 6,43
+105,Lurín,44
+106,Punta Hermosa,45
+107,Punta Negra,46
+108,San Bartolo,47
+109,Santa María del Mar,48
+110,Pucusana,49

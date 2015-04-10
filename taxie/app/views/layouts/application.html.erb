@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= yield(:title)%> | Taxi Express</title>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<%= render 'shared/navbar' %>
+	<div class="main-page-content <%= controller.controller_name %>">
+		<%= yield %>
+	</div>
+</body>
+</html>

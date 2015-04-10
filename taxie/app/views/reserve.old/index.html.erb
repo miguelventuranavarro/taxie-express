@@ -1,0 +1,129 @@
+<% provide(:reserve,"active") %>
+<% provide(:title,"Reserva") %>
+
+<div class="container">
+    <div class="row">
+
+      <div class="col-md-12">
+        <h1><font color="blue">Reserva</h1>  
+        <p> <font color="#000000" > BIENVENIDO!!...
+        Aqui podras Realizar tu Reserva de nuestro servicio de Taxi: <P>
+      </div>
+    </div>
+  </div>
+
+
+<div class="jumbotron">
+       
+        <style>
+          body {
+          background-color: gold;
+               }
+        </style>
+        </body>
+
+
+
+
+<div class="container">
+
+	<div class="row">
+			<div class="col-md-6">
+
+			</div>
+			<div class="col-md-6">
+				<div  class="total-rate pull-right"><h1 id="calRate"></h1></div>
+			</div>
+			 <div class="clearfix"></div>
+			<%= form_for :reservation, url: {action: "create"}, html: {method: "post"} do |f| %>
+			 <%= hidden_field_tag(:'reservation[price]', '') %>
+			 <%= hidden_field_tag(:'reservation[user_id]', current_user.id) %>
+			  <div class="col-md-5">
+				  <div class="form-group">
+				  <%= f.label "Distrito y zona de recojo:" %>
+				  <%= f.select :district_o_id, options_for_select(@districts.collect { |district| [district.name.titleize, district.id] }.sort, 1), {}, { id: 'districts_select', class:'form-control' } %>
+				  </div>
+				  <div class="form-group">			  
+				  <%= f.select :zone_o_id, options_for_select(@zones.collect { |zone| [zone.name.titleize, zone.id] }.sort, 0), {prompt: 'Selecciona zona'}, { id: 'zones_select', class:'form-control' } %>
+				  </div>
+				  <div class="form-group">	
+				  	<%= f.label "Dirección de recojo:" %>				  
+				  	<%= text_area_tag(:'reservation[address_o]', nil, :placeholder => 'Ingrese la direccion de recojo', class: 'form-control') %>				  
+				  </div>
+				  <div class="form-group">	
+				  	<%= text_field_tag(:'reservation[ref_o]', nil, :placeholder => 'Ingrese la referencia de recojo', class: 'form-control') %>
+				  </div>
+			  </div>
+			   <div class="col-md-2">
+
+			   </div>
+
+			  <div class="col-md-5">
+				  <div class="form-group">
+				  <%= f.label "Distrito destino:" %>	
+				  <%= f.select :district_d_id, options_for_select(@districts.collect { |district| [district.name.titleize, district.id] }.sort, 1), {}, { id: 'districts_select_2', class:'form-control' } %>
+				  </div>
+				  <div class="form-group">				
+				  <%= f.select :zone_d_id, options_for_select(@zones.collect { |zone| [zone.name.titleize, zone.id] }.sort, 0), {}, { id: 'zones_select_2', class:'form-control' } %>
+				  </div>
+				  <div class="form-group">	
+				  	<%= f.label "Dirección de destino:" %>				  
+				  	<%= text_area_tag(:'reservation[address_d]', nil, :placeholder => 'Ingrese la direccion de destino', class: 'form-control') %>				  
+				  </div>
+				  <div class="form-group">	
+				  	<%= text_field_tag(:'reservation[ref_d]', nil, :placeholder => 'Ingrese la referencia de destino', class: 'form-control') %>
+				  </div>
+			  </div>
+			  <div class="clearfix"></div>
+			  <hr>
+			  <div class="col-md-12">
+				  
+			  <%= label_tag :car_types, 'Tipo de vehículo', :class => "col-sm-2 control-label" %>
+				  
+				  <%= f.select :car_type_id, options_for_select(@car_types.collect { |cartype| [cartype.name.titleize, cartype.id] }, 1), {}, { id: 'car_types', class:'form-control col-sm-3 control-label',style:'width:120px' } %>				 
+				  <%= label_tag :'reservation[passengers_qty]', 'Número de pasajeros', :class => "col-sm-3 control-label" %>
+				  <%= text_field_tag(:'reservation[passengers_qty]', :'', {class: 'form-control',style:'width:50px' }) %>
+			  </div>	
+			  <div class="clearfix"></div>
+			  <hr>			
+			  
+
+			<div class="col-md-12">
+			  	 <%= label_tag :payment_methods, 'Método de pago', :class => "col-sm-2 control-label" %>
+			  	 <%= f.select :payment_method_id, options_for_select(@payment_methods.collect { |car| [car.name.titleize, car.id] }, 1), {}, { id: 'payment_methods', class:'form-control col-sm-3 control-label',style:'width:150px' } %>
+
+			  </div>
+			  <div class="clearfix"></div>
+
+			  <div class="col-md-12">
+			  	 <%= label_tag :reservation_types, 'Tipo de Reserva', :class => "col-sm-2 control-label" %>
+			  	 <%= f.select :reservation_type_id, options_for_select(@reservation_types.collect { |type| [type.name.titleize, type.id] }, 1), {}, { id: 'reservation_types', class:'form-control col-sm-3 control-label',style:'width:150px' } %>
+
+			  </div>
+			  <div class="clearfix"></div>
+
+
+			  <hr>	
+			  <%= f.submit "Reservar",{class:'btn btn-default	btn-lg'} %>
+			<% end %>
+
+
+
+
+	</div>
+
+</div			
+
+
+</style></style></div>
+
+</div> <!-- /container jumbotron-->
+
+
+  <hr>
+      <footer>
+        <p>&copy; [J&M]2 Company- 2015</p>
+      </footer>
+</div> <!-- /container -->
+
+

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @favorite_address.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @favorite_address.address %>
+</p>
+
+<p>
+  <strong>Ref:</strong>
+  <%= @favorite_address.ref %>
+</p>
+
+<p>
+  <strong>District:</strong>
+  <%= @favorite_address.district.name %>
+</p>
+
+<p>
+  <strong>Zone:</strong>
+  <%= @favorite_address.zone.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_favorite_address_path(@favorite_address) %> |
+<%= link_to 'Back', favorite_addresses_path %>

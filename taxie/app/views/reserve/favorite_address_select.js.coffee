@@ -1,0 +1,27 @@
+$('#reservation_district_o_id').attr('disabled', false); 
+$('#reservation_zone_o_id').attr('disabled', false);
+$('#reservation_district_d_id').attr('disabled', false);
+$('#reservation_zone_d_id').attr('disabled', false);  
+$("#districts_select").hide()
+$("#district_o_fav").show()
+$("#reservation_dis_o").val('<%= @district_o.name %>')
+$("#reservation_district_o_id").val(<%= @favorite_address_o.district_id %>)
+$("#zones_select").hide()
+$("#zone_o_fav").show()
+$("#reservation_zone_o").val('<%= @zone_o.name %>')
+$("#reservation_zone_o_id").val(<%= @favorite_address_o.zone_id %>)
+$("#reservation_address_o").val('<%= @favorite_address_o.address %>')
+$("#reservation_ref_o").val('<%= @favorite_address_o.ref %>')
+$("#districts_select_2").hide()
+$("#district_d_fav").show()
+$("#reservation_dis_d").val('<%= @district_d.name %>')
+$("#reservation_district_d_id").val(<%= @favorite_address_d.district_id %>)
+$("#zones_select_2").hide()
+$("#zone_d_fav").show()
+$("#reservation_zone_d").val('<%= @zone_d.name %>')
+$("#reservation_zone_d_id").val(<%= @favorite_address_d.zone_id %>)
+$("#reservation_address_d").val('<%= @favorite_address_d.address %>')
+$("#reservation_ref_d").val('<%= @favorite_address_d.ref %>')
+$("#calRate").html("")
+$("#calRate").html("S/.<%= @calc_rate.price %>")
+$("#reservation_price").val(<%= @calc_rate.price %>)

@@ -1,0 +1,111 @@
+district,name,district_id
+Ancón,Ancón,1
+Santa Rosa,Santa Rosa,2
+Ventanilla,Ventanilla,3
+Callao,Bellavista,4
+Callao,San José,4
+Callao,Cercado,4
+Callao,Industrial I,4
+Callao,Insdustrial II,4
+La Punta,La Punta,5
+Carmen de La Legua-Reynoso,Carmen de La Legua-Reynoso,6
+Bellavista,Bellavista,7
+La Perla,La Perla,8
+Carabayllo,Carabayllo,9
+Puente Piedra,Puente Piedra,10
+San Martín de Porres,Ingeniería,11
+San Martín de Porres,Sn. Germán/Conde,11
+San Martín de Porres,Pacífico,11
+San Martín de Porres,San Diego,11
+Los Olivos,El Trebol,12
+Los Olivos,Palmeras,12
+Los Olivos,Villa Sol,12
+Los Olivos,Pro/Pro Lima,12
+Comas,Carmen/Retablo,13
+Comas,San Felipe,13
+Comas,Collique,13
+Comas,Carabayllo,13
+Independencia,Ermitaño/Tahua,14
+Independencia,Megaplaza,14
+San Juan de Lurigancho,Zárate,15
+San Juan de Lurigancho,Mangomarca,15
+San Juan de Lurigancho,Las Flores,15
+San Juan de Lurigancho,Canto Grande,15
+San Juan de Lurigancho,Bayovar/Cáceres,15
+Lima,Sta. Beatriz,16
+Lima,Cercado,16
+Lima,Barrios Altos,16
+Lima,Industrial,16
+Lima,Palomino,16
+Breña,Breña,17
+Rímac,Rímac,18
+El Agustino,El Agustino,19
+San Miguel,Pando,20
+San Miguel,Leyendas,20
+San Miguel,Maranga,20
+Pueblo Libre,Bolivar,21
+Pueblo Libre,Aelu,21
+Jesús María,San Felipe,22
+Jesús María,San José,22
+Magdalena del Mar,Pershing,23
+Magdalena del Mar,Castilla,23
+Lince,Lince,24
+La Victoria,La Victoria,25
+La Victoria,Sta. Catalina,25
+San Luis,San Luis,26
+San Isidro,Orrantia,27
+San Isidro,Basadre,27
+San Isidro,Golf Club,27
+San Isidro,Arona,27
+San Isidro,Corpac,27
+Miraflores,Pucllana,28
+Miraflores,Santa Cruz,28
+Miraflores,Reducto,28
+Miraflores,Aurora,28
+Surquillo,Aramburú,29
+Surquillo,La Calera,29
+Barranco,Barranco,30
+San Borja,Guardia Civil,31
+San Borja,S. Borja Norte,31
+San Borja,Pentagonito,31
+Santiago de Surco,Higuereta,32
+Santiago de Surco,Chacarilla,32
+Santiago de Surco,Chama,32
+Santiago de Surco,San Roque,32
+Santiago de Surco,Castellana,32
+Santiago de Surco,Palmas,32
+Santiago de Surco,Sagitario,32
+Santiago de Surco,Golf Incas,32
+Santiago de Surco,Álamos,32
+Santiago de Surco,Valle Hermoso,32
+Santiago de Surco,Casuarin/Casuar.Sur,32
+Chorrillos,Chorrillos,33
+Chorrillos,Los Cedros,33
+Chorrillos,Campiña,33
+Chorrillos,Encant/Delicia,33
+Santa Anita,Óvalo,34
+Santa Anita,Mdo. Product.,34
+Ate,Salamanca,35
+Ate,Vulcano,35
+Ate,Mayorazgo,35
+La Molina,Camacho,36
+La Molina,Sta. Patricia,36
+La Molina,El Remanso,36
+La Molina,La Capilla,36
+La Molina,Rinconada,36
+La Molina,Plani/Sol Molina,36
+Lurigancho-Chosica,Lurigancho-Chosica,37
+Chaclacayo,Chaclacayo,38
+Cieneguilla,Cieneguilla,39
+Pachacámac,Pachacámac,40
+San Juan de Miraflores,San Juan de Miraflores,41
+Villa María del Triunfo,Sn. Gabriel/Pesquero,42
+Villa María del Triunfo,José Gálvez/Tablada,42
+Villa El Salvador,"Sector 1,2 y 3",43
+Villa El Salvador,Sector 5 y 6,43
+Lurín,Lurín,44
+Punta Hermosa,Punta Hermosa,45
+Punta Negra,Punta Negra,46
+San Bartolo,San Bartolo,47
+Santa María del Mar,Santa María del Mar,48
+Pucusana,Pucusana,49

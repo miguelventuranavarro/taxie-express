@@ -1,0 +1,137 @@
+
+ <% if current_user.user_type_id == 1 %>
+   <div class="container">
+      <div class="row">
+
+        <div class="col-md-12">
+          <h1><font color="blue">Mi Solicitudes</h1>  
+          <p> <font color="#000000" > BIENVENIDO!!... <%= current_user.name%>
+          Aqui encontraras tu Historial de servicios realizados: <P>
+        </div>
+      </div>
+    </div>
+
+
+
+ <% elsif current_user.user_type_id == 2 %>
+     <
+     div class="container">
+        <div class="row">
+
+          <div class="col-md-12">
+            <h1><font color="blue">Mis Asignaciones</h1>  
+            <p> <font color="#000000" > BIENVENIDO CONDUCTOR!!... <%= current_user.name%>
+             : Aqui podrás gestionar todo lo referente a tus servicios asignados: <P>
+          </div>
+        </div>
+      </div>
+
+
+   <% else %>
+  
+     <div class="container">
+        <div class="row">
+
+          <div class="col-md-12">
+            <h1><font color="blue">Listado de Reservas</h1>  
+            <p> <font color="#000000" > BIENVENIDO OPERADOR!!... <%= current_user.name%>
+            : Aqui podrás gestionar las reservaciones pendientes: <P>
+          </div>
+        </div>
+      </div>
+
+   .
+   <% end %>
+
+
+
+<div class="jumbotron">
+       
+        <style>
+          body {
+          background-color: gold;
+               }
+        </style>
+        </body>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+
+
+
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                    <th>Codigo de Reserva</th>
+                      <th>Tipo de Reserva</th>
+                      <th>Direecion de origen</th>
+                      <th>Direecion de destino</th>
+                      <th>Precio</th>
+                      <th>Estado</th>
+                      <th>Unidad</th>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <% @reservations.each do |reservation| %>
+                      <tr>
+                      <td><%= reservation.code%></td>
+                        <td><%= reservation.reservation_type.name%></td>
+                        <td><%= reservation.address_o+ " , " +reservation.district_o.name + " Referencia: "+reservation.ref_o %></td>
+                        <td><%= reservation.address_d+ " , " +reservation.district_d.name + " Referencia: "+reservation.ref_d %></td>
+                        <td><%= "S/. "+reservation.price.to_s %></td>
+                        <td><%= reservation.reservation_status.name %></td>
+                        
+                        <% if reservation.car == nil %>
+                        <td></td>
+                        <% else %>
+                        <td><%= reservation.car.name %></td>
+                        <% end %>
+
+                        <td><%= link_to 'Ver Detalle', reservation %></td>
+
+                        <td><%= link_to 'Cancelar Servicio', reservations_cancelar_path(reservation), data: { confirm: '¿Está seguro?' } %></td>
+
+                        <% if current_user.user_type_id == 3 %>
+                        <td><%= link_to 'Asignar Servicio', reservations_asignar_path(reservation) %></td>
+                        <% end %>
+                        
+                        
+
+                      </tr>
+                    <% end %>
+                  </tbody>
+                </table>
+
+                <br>
+                <% if current_user.user_type_id != 2 %>
+                <%= link_to 'Nueva Reservación  ', reserve_path %>
+                <% end %>
+                
+
+              
+                <%= link_to "Regresar a MiCuenta", :back %>
+
+            <br>
+
+
+      </div>
+
+    </div>
+  </div>
+
+
+</div> <!-- /container jumbotron-->
+
+
+  <hr>
+      <footer>
+        <p>&copy; [J&M]2 Company- 2015</p>
+      </footer>
+</div> <!-- /container -->
+

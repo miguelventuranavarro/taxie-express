@@ -1,0 +1,11 @@
+<h1>Evalua el servicio</h1>
+
+<%= semantic_form_for @reservation do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :feedback %>
+  <% end %>
+
+  <%= f.actions do %>
+    <%= f.action :submit, :as => :input, label: 'Grabe su Feedback' %>
+  <% end %>
+<% end %>

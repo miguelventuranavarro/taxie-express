@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rate_id: 1
+  district_o_id: 1
+  zone_o_id: 1
+  address_o: MyString
+  ref_o: MyString
+  district_d_id: 1
+  zone_o_id: 1
+  address_d: MyString
+  ref_d: MyString
+  price: 1
+  passengers_qty: 1
+  payment_method: 1
+  user_id: 
+  car_id: 
+
+two:
+  rate_id: 1
+  district_o_id: 1
+  zone_o_id: 1
+  address_o: MyString
+  ref_o: MyString
+  district_d_id: 1
+  zone_o_id: 1
+  address_d: MyString
+  ref_d: MyString
+  price: 1
+  passengers_qty: 1
+  payment_method: 1
+  user_id: 
+  car_id: 

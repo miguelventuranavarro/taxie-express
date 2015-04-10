@@ -1,0 +1,114 @@
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1><font color="blue">Edicion de datos de Usuario</h1>  
+        <p> <font color="#000000" > BIENVENIDO!!...
+        Desde aqui puedes editar tus Datos: <P>
+      </div>
+    </div>
+  </div>
+
+
+<div class="jumbotron">
+    <style>
+      body {
+      background-color: gold;
+           }
+    </style>
+    </body>
+
+
+ <div class="container">
+    <!-- Example row of columns -->
+      <img src="/images/editar.png" width="280" height="290" align="left">
+ 
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+          <%= devise_error_messages! %>
+
+  <div class="row">
+  <div class="col-md-4"> 
+              <div class="field">
+                <%= f.label :Nombre %><br />
+                <%= f.text_field :name, autofocus: true %>
+              </div>
+
+               <div class="field">
+                <%= f.label :Apellidos %><br />
+                <%= f.text_field :lastname %>
+              </div>
+
+              <div class="field">
+                <%= f.label :Teléfono %><br />
+                <%= f.text_field :telephone %>
+              </div>
+
+              <div class="field">
+                <%= f.label :Móvil %><br />
+                <%= f.text_field :cellphone %>
+              </div>
+
+              <div class="field">
+                <%= f.label :dni %><br />
+                <%= f.text_field :dni %>
+              </div>
+    </div>
+  <div class="col-md-4"> 
+              <div class="field">
+              <%= f.label :'Fecha Nacimiento' %><br />
+              <%= f.date_select :birthday, :start_year => Date.current.year, :end_year => 1920%>
+              </div>
+
+              <div class="field">
+                <%= f.label :email %><br />
+                <%= f.email_field :email, autofocus: true %>
+              </div>
+
+              <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+              <% end %>
+
+              <div class="field">
+                <%= f.label :password %> <i>(Dejar en Blanco si no deseas cambiarlo)</i><br />
+                <%= f.password_field :password, autocomplete: "off" %>
+              </div>
+
+              <div class="field">
+                <%= f.label :"confirmación de Password" %><br />
+                <%= f.password_field :password_confirmation, autocomplete: "off" %>
+              </div>
+
+              <div class="field">
+                <%= f.label :"Password Actual" %> <i>(Necesitamos su password actual para confirmar los cambios)</i><br />
+                <%= f.password_field :current_password, autocomplete: "off" %>
+              </div>
+    </div> 
+  <div class="col-md-3">   
+              <div class="actions">
+                <%= f.submit "Actualizar Datos" %>
+              </div>
+    </div>
+
+        <% end %>
+
+   </div> 
+  </div>
+  </style></div>
+</div> <!-- /container jumbotron-->
+
+  <div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+      <div class="col-md-3">
+        <p>Insatisfecho? <%= button_to "Cancelar Mi Cuenta", registration_path(resource_name), data: { confirm: "Estas Seguro?" }, method: :delete %></p>
+      </div>
+
+        <%= link_to "Regresar a MiCuenta", :back %>
+       
+    </div>
+
+    <hr>
+        <footer>
+          <p>&copy; [J&M]2 Company- 2015</p>
+        </footer>
+
+  </div> <!-- /container -->

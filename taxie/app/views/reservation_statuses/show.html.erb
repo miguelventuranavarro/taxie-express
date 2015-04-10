@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @reservation_status.name %>
+</p>
+
+<%= link_to 'Edit', edit_reservation_status_path(@reservation_status) %> |
+<%= link_to 'Back', reservation_statuses_path %>

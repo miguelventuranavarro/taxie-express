@@ -1,0 +1,35 @@
+<!-- Button trigger modal -->
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Direcciones favoritas</h4>
+      </div>
+     
+        
+        <div class="modal-body" >
+        <div class="row" style="margin:0 10px">
+          <%= form_for :favorite_address  do |f| %>
+          <div class="form-group">
+          <%= f.label "Dirección favorita de recojo:" %>
+          <%= f.select :favaddress_o_id, options_for_select(@favorite_addresses.collect { |favaddress| [favaddress.name.titleize, favaddress.id] }, 1), {}, { id: 'favaddress_o_select', class:'form-control' } %>          
+          </div>
+
+          <div class="form-group">
+          <%= f.label "Dirección favorita de destino:" %>
+          <%= f.select :favaddress_d_id, options_for_select(@favorite_addresses.collect { |favaddress| [favaddress.name.titleize, favaddress.id] }, 1), {}, { id: 'favaddress_d_select', class:'form-control' } %>          
+          </div>         
+          <% end %>
+        </div>  
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" id="submit">Continuar</button>
+        </div>
+     
+    </div>
+  </div>
+</div>

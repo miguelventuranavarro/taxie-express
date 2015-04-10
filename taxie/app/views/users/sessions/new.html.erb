@@ -1,0 +1,70 @@
+<div class="container">
+    <div class="row">
+
+      <div class="col-md-12">
+        <h1><font color="blue">Logeate</h1>  
+        <p> <font color="#000000" > BIENVENIDO!!...
+        Inicia Sesión desde aqui: <P>
+      </div>
+    </div>
+  </div>
+
+<!--<h2>Logeate</h2>
+-->
+
+<div class="jumbotron">
+       
+        <style>
+          body {
+          background-color: gold;
+               }
+        </style>
+        </body>
+
+        
+  <div class="container">
+   
+    <img src="/images/Login.png" align="left">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field">
+        <%= f.label :Email %><br />
+        <%= f.email_field :email, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password %><br />
+        <%= f.password_field :password, autocomplete: "off" %>
+      </div>
+
+    <% if devise_mapping.rememberable? -%>
+       <div class="field">
+            <%= f.check_box :remember_me %>
+            <%= f.label :recuerdame %>
+          </div>
+        <% end -%>
+
+        <div class="actions">
+          <%= f.submit "Logeate" %>
+        </div>
+      <% end %>
+  </div>
+
+</div> <!-- /container -->
+
+  
+<div class="container">
+  <!-- Example row of columns -->
+
+
+  <div class="row">
+    <div class="col-md-4">
+   
+        <%= render "users/shared/links" %>
+    </div>       
+  </div>
+
+  <hr>
+      <footer>
+        <p>&copy; [J&M]2 Company - 2015</p>
+      </footer>
+</div> <!-- /container -->

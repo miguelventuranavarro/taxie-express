@@ -1,0 +1,110 @@
+
+
+ <% if current_user.user_type_id == 1 %>
+	 <div class="container">
+	    <div class="row">
+
+	      <div class="col-md-12">
+	        <h1><font color="blue">Mi Cuenta</h1>  
+	        <p> <font color="#000000" > BIENVENIDO!!... <%= current_user.name%>
+	        : Aqui podrás gestionar todo lo referente a tu cuenta: <P>
+	      </div>
+	    </div>
+	  </div>
+
+
+
+ <% elsif current_user.user_type_id == 2 %>
+		 <
+		 div class="container">
+		    <div class="row">
+
+		      <div class="col-md-12">
+		        <h1><font color="blue">Mi Cuenta</h1>  
+		        <p> <font color="#000000" > BIENVENIDO CONDUCTOR!!... <%= current_user.name%>
+		         : Aqui podrás gestionar todo lo referente a tu cuenta: <P>
+		      </div>
+		    </div>
+		  </div>
+
+
+ 	 <% else %>
+	
+		 <div class="container">
+		    <div class="row">
+
+		      <div class="col-md-12">
+		        <h1><font color="blue">Mi Cuenta</h1>  
+		        <p> <font color="#000000" > BIENVENIDO OPERADOR!!... <%= current_user.name%>
+		        : Aqui podrás gestionar todo lo referente a tu cuenta: <P>
+		      </div>
+		    </div>
+		  </div>
+
+ 	 .
+ 	 <% end %>
+
+
+
+	      <style>
+	        body {
+	        background-color: gold;
+	             }
+	      </style>
+	      </body>
+<%= yield %>
+
+<div class="jumbotron">
+<div class="container">
+  <div class="row">
+
+  					<ul class="nav nav-tabs">
+	     
+					 <li class="<%= yield(:reservations)%>" role="presentation">
+					 <% if current_user.user_type_id == 1 %>
+					 <%= link_to 'Mis solicitudes', reservations_path(@current_user)%></li>
+					 <% elsif current_user.user_type_id == 2
+					 	 %>
+					 	 <%= link_to 'Mis servicios asignados', reservations_path(@current_user)%></li>
+					 	 <% else %>
+					 	 <%= link_to 'Solicitudes', reservations_path(@current_user)%></li>
+					 	 <% end %>
+
+
+					  <li role="presentation"><%= link_to 'Editar Mis Datos', edit_user_registration_path(@current_user)%></li>
+					 
+					 <% if current_user.user_type_id == 1 %>
+					  <li role="presentation"><%= link_to 'Lugares Favoritos',  favorite_addresses_path(@current_user)%></li>
+					  <% end %>
+
+
+					  <li class="<%= yield(:historial)%>" role="presentation">
+
+					<% if current_user.user_type_id == 1 %>
+					  <%= link_to 'Mi historial', reservations_historial_path(@current_user)%></li>
+					<% elsif current_user.user_type_id == 2 %>
+					<%= link_to 'Mi historial', reservations_historial_path(@current_user)%></li>
+					<% else %>
+					<%= link_to 'Historial de Reservas', reservations_historial_path(@current_user)%></li>
+					<% end %>
+
+					</ul>
+
+
+
+
+      </div>
+
+    </div>
+  </div>
+
+
+</div> <!-- /container jumbotron-->
+
+
+  <hr>
+      <footer>
+        <p>&copy; [J&M]2 Company- 2015</p>
+      </footer>
+</div> <!-- /container -->
+

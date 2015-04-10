@@ -1,0 +1,35 @@
+<h1>Listado de Lugares Favoritos</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Direccion</th>
+      <th>Referencia</th>
+      <th>Distrito</th>
+      <th>Zona</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @favorite_addresses.each do |favorite_address| %>
+      <tr>
+        <td><%= favorite_address.name %></td>
+        <td><%= favorite_address.address %></td>
+        <td><%= favorite_address.ref %></td>
+        <td><%= favorite_address.district.name %></td>
+        <td><%= favorite_address.zone.name %></td>
+        <td><%= link_to 'Show', favorite_address %></td>
+        <td><%= link_to 'Edit', edit_favorite_address_path(favorite_address) %></td>
+        <td><%= link_to 'Destroy', favorite_address, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Favorite address', new_favorite_address_path %>

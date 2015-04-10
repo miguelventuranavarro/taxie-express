@@ -1,0 +1,105 @@
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1><font color="blue">Registrate como Usuario</h1>  
+        <p> <font color="#000000" > BIENVENIDO!!...
+        Registrate como usuario desde aqui: <P>
+      </div>
+    </div>
+  </div>
+
+
+<div class="jumbotron">
+    <style>
+      body {
+      background-color: gold;
+           }
+    </style>
+    </body>
+
+  <div class="container">
+  <img src="/images/registro2.png" width="228" height="222" align="left">
+
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= devise_error_messages! %>
+ 
+  <div class="row">
+  <div class="col-md-4"> 
+
+          <div class="field">
+            <%= f.label :Nombre %><br />
+            <%= f.text_field :name, autofocus: true %>
+          </div>
+
+          <div class="field">
+            <%= f.label :Apellidos %><br />
+            <%= f.text_field :lastname %>
+          </div>
+
+          <div class="field">
+            <%= f.label :Teléfono %><br />
+            <%= f.text_field :telephone %>
+          </div>
+
+          <div class="field">
+            <%= f.label :Móvil %><br />
+            <%= f.text_field :cellphone %>
+          </div>
+
+          <div class="field">
+            <%= f.label :Dni %><br />
+            <%= f.text_field :dni %>
+          </div>
+
+    </div>
+  <div class="col-md-4"> 
+          <div class="field">
+            <%= f.label :"Fecha de Nacimiento" %><br />
+            <%= f.date_select :birthday, :start_year => Date.current.year, :end_year => 1920 %>
+          </div>
+
+          <div class="field">
+            <%= f.label :Email %><br />
+            <%= f.email_field :email %>
+          </div>
+
+          <div class="field">
+            <%= f.label :password %>
+            <% if @validatable %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "off" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :"Confirmación de password" %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "off" %>
+          </div>
+    </div> 
+    <div class="col-md-6">
+            <div class="actions">
+              <%= f.submit "Registrate" %>
+            </div>
+    </div>
+
+        <% end %>
+   </div> 
+
+  </div>
+  
+</div> <!-- /container jumbotron-->
+
+
+<div class="container">
+  <!-- Example row of columns -->
+  <div class="row">
+    <div class="col-md-3">
+        <%= render "users/shared/links" %>
+    </div>       
+  </div>
+
+  <hr>
+      <footer>
+        <p>&copy; [J&M]2 Company- 2015</p>
+      </footer>
+</div> <!-- /container -->

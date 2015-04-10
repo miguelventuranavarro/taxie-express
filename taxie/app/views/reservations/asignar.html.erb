@@ -1,0 +1,17 @@
+<h1>Asigna una unidad a un servicio</h1>
+
+<%= form_for :reservation, url: {action: "update2"}, html: {method: "post"} do |f| %>
+
+<div class="col-md-12">
+ 
+ <%= label_tag :cars, 'Unidad', :class => "col-sm-2 control-label" %>
+ 
+ <%= f.select :car_id, options_for_select(@cars.collect { |car| [car.name.titleize, car.id] }, 1), {}, { id: 'cars', class:'form-control col-sm-3 control-label',style:'width:120px' } %>	
+ 	 
+
+
+ </div>
+
+ <%= f.submit "Asignar",{class:'btn btn-default	btn-lg'} %>
+
+ <% end %>

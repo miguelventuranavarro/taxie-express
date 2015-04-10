@@ -1,0 +1,156 @@
+<% provide(:reserve,"active") %>
+<% provide(:title,"Reserva") %>
+
+<div class="container">
+<%= render 'reserve/favorite_address' %>
+	<div class="row">
+			<div class="col-md-2">
+				<h1>Reserva</h1>	
+			</div>
+			<div class="col-md-6">
+				<h1>
+				<button type="button" class="btn btn-small" data-toggle="modal" data-target="#myModal">
+				  Usar direcciones favoritas
+				</button>	
+				</h1>
+			</div>			
+			<div class="col-md-4">
+				<div  class="total-rate pull-right"><h1 id="calRate"></h1></div>
+			</div>
+	</div>
+	<div class="row">
+	
+	<% if @err %>
+		    <div class="alert alert-warning">
+		        <a href="#" class="close" data-dismiss="alert">&times;</a>
+		        Complete todos los datos.
+		    </div>
+	<% end %>	    
+		
+	</div>
+	<%= form_for :reservation, url: {action: "create"}, html: {method: "post"} do |f| %>
+	<%= hidden_field_tag(:'reservation[price]', '') %>
+	<%= hidden_field_tag(:'reservation[user_id]', current_user.id) %>
+	<div class="row" id="address-block">
+			  <div class="col-md-5">
+				  <div class="form-group">
+				  <%= f.label "Distrito y zona de recojo:" %>
+				  <%= f.select :district_o_id, options_for_select(@districts.collect { |district| [district.name.titleize, district.id] }, 1), {}, { id: 'districts_select', class:'form-control' } %>
+				  <div id="district_o_fav" style="display:none;">
+					  <%= text_field_tag(:'reservation[dis_o]', :'', class: 'form-control') %>
+					  <%= hidden_field_tag(:'reservation[district_o_id]', '') %>
+				  </div>	
+				  </div>
+				  <div class="form-group">			  
+				  <%= f.select :zone_o_id, options_for_select(@zones.collect { |zone| [zone.name.titleize, zone.id] }, 0), {prompt: 'Selecciona zona'}, { id: 'zones_select', class:'form-control' } %>
+				  <div id="zone_o_fav" style="display:none">
+				  	<%= text_field_tag(:'reservation[zone_o]', :'', class: 'form-control') %>
+				  	<%= hidden_field_tag(:'reservation[zone_o_id]', '') %>	
+				  </div>
+				  </div>
+				  <div class="form-group">	
+				  	<%= f.label "Dirección de recojo:" %>				  
+				  	<%= text_area_tag(:'reservation[address_o]', :'', class: 'form-control', placeholder: 'Ingresa la dirección de recojo') %>				  
+				  </div>
+				  <div class="form-group">	
+				  	<%= text_field_tag(:'reservation[ref_o]', :'', class: 'form-control', placeholder: 'Ingresa una referencia') %>
+				  </div>
+			  </div>
+			   <div class="col-md-2">
+
+			   </div>
+			  <div class="col-md-5">
+				  <div class="form-group">
+				  <%= f.label "Distrito destino:" %>	
+				  <%= f.select :district_d_id, options_for_select(@districts.collect { |district| [district.name.titleize, district.id] }, 1), {}, { id: 'districts_select_2', class:'form-control' } %>
+				  <div id="district_d_fav" style="display:none">
+					  <%= text_field_tag(:'reservation[dis_d]', :'', class: 'form-control') %>
+					  <%= hidden_field_tag(:'reservation[district_d_id]', '') %>
+				  </div>				  
+				  </div>
+				  <div class="form-group">				
+				  <%= f.select :zone_d_id, options_for_select(@zones.collect { |zone| [zone.name.titleize, zone.id] }, 0), {prompt: 'Selecciona zona'}, { id: 'zones_select_2', class:'form-control' } %>
+				  <div id="zone_d_fav" style="display:none">
+				  	<%= text_field_tag(:'reservation[zone_d]', :'', class: 'form-control') %>
+				  	<%= hidden_field_tag(:'reservation[zone_d_id]', '') %>	
+				  </div>				  
+				  </div>
+				  <div class="form-group">	
+				  	<%= f.label "Dirección de destino:" %>				  
+				  	<%= text_area_tag(:'reservation[address_d]', :'', class: 'form-control', placeholder: 'Ingresa la dirección de destino') %>				  
+				  </div>
+				  <div class="form-group">	
+				  	<%= text_field_tag(:'reservation[ref_d]', :'', class: 'form-control', placeholder: 'Ingresa una referencia') %>
+				  </div>
+			  </div>
+		</div>
+		<div class="row">	  
+			  <hr>
+			  <div class="col-md-12">				  
+
+			  <%= label_tag :car_types, 'Tipo de vehículo', :class => "col-sm-2 control-label" %>
+				  
+				  <%= f.select :car_type_id, options_for_select(@car_types.collect { |cartype| [cartype.name.titleize, cartype.id] }, 1), {}, { id: 'car_types', class:'form-control col-sm-3 control-label',style:'width:120px' } %>	
+				  <%= label_tag :'reservation[passengers_qty]', 'Número de pasajeros' %>
+				  <%= text_field_tag(:'reservation[passengers_qty]', :'', {class: 'form-control',style:'width:50px;display:inline' }) %>
+			  </div>	
+			  <div class="clearfix"></div>
+			  <hr>			
+			  <div class="col-md-12">
+			  	 <%= label_tag :payment_methods, 'Método de pago: ' %>
+			  	 <%= f.select :payment_method_id, options_for_select(@payment_methods.collect { |car| [car.name.titleize, car.id] }, 1), {}, { id: 'payment_methods', class:'form-control',style:'width:150px;display:inline' } %>
+
+			  </div>
+			  <div class="clearfix"></div>
+			  <hr>	
+			  <div class="col-md-4">				  
+			  <%= label_tag :reserve_types, 'Tipo de reserva: ' %>				  
+			  <%= radio_button_tag 'reservation[reservation_type_id]', '1', false %> Inmediata
+			  <%= radio_button_tag 'reservation[reservation_type_id]', '2', false %> Programada
+			  </div>
+			  <div class='col-md-8'>
+	            <div class="form-group datetime" style="display:none">
+	                <div class='input-group date' id='datetimepicker1' style='width:250px;'>	                    
+	                    <%= text_field_tag(:'reservation[date_time]', :'', class: 'form-control', placeholder: '') %>
+	                    <span class="input-group-addon">
+	                        <span class="glyphicon glyphicon-calendar"></span>
+	                    </span>
+	                </div>
+	            </div>
+			  </div>
+			  <div class="clearfix"></div>
+			  <hr>			  
+			  <%= f.submit "Reservar",{class:'btn btn-default	btn-lg'} %>					
+	</div>
+	<% end %> 
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker1').datetimepicker();
+
+            
+			$('#reservation_district_o_id').attr('disabled', true); 
+			$('#reservation_zone_o_id').attr('disabled', true);  
+			$('#reservation_district_d_id').attr('disabled', true);   
+			$('#reservation_zone_d_id').attr('disabled', true);        
+
+            /*$("button#submit").click(function(){
+		    	$.ajax({
+			        type: "POST",
+					url: "/reserva/dir_fav_sel",
+					data: $('form.contact').serialize(),
+					         success: function(msg){
+					         $("#address-block").html(msg)
+					         $("#myModal").modal('hide');
+					        },
+					error: function(){
+					alert("failure");
+					}
+				}); 	
+
+            });*/	
+        });
+
+
+       
+    </script>    
+</div			

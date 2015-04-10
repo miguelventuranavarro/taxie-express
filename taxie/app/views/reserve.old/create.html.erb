@@ -1,0 +1,74 @@
+<% provide(:reserve,"active") %>
+<% provide(:title,"Reserva") %>
+
+<div class="container">
+	<div class="row">
+		
+			<h1>Servicio creado!!</h1>	
+
+			<p>
+  <strong>Codigo de Servicio:</strong>
+  <%= @reservation.code %>
+</p>
+
+<p>
+  <strong>Districto de Origen:</strong>
+  <%= @reservation.district_o.name %>
+</p>
+
+<p>
+  <strong>Zona de Origen:</strong>
+  <%= @reservation.zone_o.name %>
+</p>
+
+<p>
+  <strong>Direccion de Origen:</strong>
+  <%= @reservation.address_o %>
+</p>
+
+<p>
+  <strong>Referencia Direccion Origen:</strong>
+  <%= @reservation.ref_o %>
+</p>
+
+<p>
+  <strong>Districto de Destino:</strong>
+  <%= @reservation.district_d.name %>
+</p>
+
+<p>
+  <strong>Zona de Origen:</strong>
+  <%= @reservation.zone_o.name %>
+</p>
+
+<p>
+  <strong>Direccion de Destino:</strong>
+  <%= @reservation.address_d %>
+</p>
+
+<p>
+  <strong>Referencia Direccion Destino:</strong>
+  <%= @reservation.ref_d %>
+</p>
+
+<p>
+  <strong>Precio:</strong>
+  <%= @reservation.price %>
+</p>
+
+<p>
+  <strong>Passengers qty:</strong>
+  <%= @reservation.passengers_qty %>
+</p>
+
+<p>
+  <strong>Payment method:</strong>
+  <%= @reservation.payment_method.name %>
+</p>
+
+<p>
+  <strong>Car:</strong>
+  <%= @reservation.car_type.name %>
+</p>
+	</div>
+</div>

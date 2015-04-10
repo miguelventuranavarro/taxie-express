@@ -1,0 +1,58 @@
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1><font color="blue">Olvidaste Tu Password</h1>  
+        <p> <font color="#000000" > BIENVENIDO!!...
+        Desde aqui te Ayudaremos a Recuperar tu password: <P>
+      </div>
+    </div>
+  </div>
+
+<!--
+<h2>Forgot your password?</h2>
+-->
+
+<div class="jumbotron">
+
+	     
+	      <style>
+	        body {
+	        background-color: gold;
+	             }
+	      </style>
+	      </body>
+
+	      
+  	<div class="container">
+
+		<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+		  <%= devise_error_messages! %>
+
+		  <div class="field">
+		    <%= f.label :email %><br />
+		    <%= f.email_field :email, autofocus: true %>
+		  </div>
+
+		  <div class="actions">
+		    <%= f.submit "Envíame Instrucciones para reestablecer mi Password" %>
+		  </div>
+		<% end %>
+
+	</div>
+</div> <!-- /container -->
+
+
+<div class="container">
+  <!-- Example row of columns -->
+  <div class="row">
+    <div class="col-md-4">
+		<%= render "users/shared/links" %>
+	</div>       
+  </div>
+
+  <hr>
+      <footer>
+        <p>&copy; [J&M]2 Company- 2015</p>
+      </footer>
+</div> <!-- /container -->
+

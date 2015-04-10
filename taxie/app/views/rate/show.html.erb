@@ -1,0 +1,80 @@
+<% provide(:rate,"active") %>
+<% provide(:title,"Tarifas") %>
+
+
+<div class="jumbotron">
+
+	     <style>
+	        body {
+	        background-color: gold;
+	             }
+	      </style>
+	      </body>
+     
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h1>Tarifa</h1>	
+					<% if params[:rate][:zone_o]!="" && params[:rate][:zone_d]!=""%>
+						<div class="col-md-6">
+						  <div class="form-group">
+						  	<strong>Distrito y zona de recojo:</strong>			  		
+							<%= @district_o.name %> 
+							<% if params[:rate][:zone_o]!=""%>	
+								, <%= @zone_o.name %>	
+							<% end %>			
+							</div>
+						  <div class="form-group">
+						  <strong>Distrito y zona de destino:</strong>			  		
+							<%= @district_d.name %>
+							<% if params[:rate][:zone_d]!="" %>	
+							, <%= @zone_d.name %>		
+							<% end %>	
+							</div>	
+						</div>	
+						<div class="col-md-6">
+							<div class="total-rate pull-right">
+								<% if !@rate.nil? %>	
+								<h2>S/. <%= @rate.price %></h2>						
+								<p>
+								<a class="btn btn-default">Hacer reserva inmediata</a>
+								</p>
+								<p>
+								<a class="btn btn-default">Hacer reserva programada</a>
+								</p>
+								<% end %>
+							</div>
+						</div>			
+					<% else %>
+
+
+				    <div class="alert alert-warning">
+				        <!--<a href="#" class="close" data-dismiss="alert">&times;</a>-->
+				        ¡No haz seleccionado la zona de origen o de destino!
+				    </div>
+
+					
+					<% end %>	
+				</div>				
+			</div>
+		</div>		
+
+
+</style> </div>
+
+
+</div> <!-- /container jumbotron-->
+
+
+
+
+  <hr>
+      <footer>
+        <p>&copy; [J&M]2 Company- 2015</p>
+      </footer>
+</div> <!-- /container -->
+
+
+
+
